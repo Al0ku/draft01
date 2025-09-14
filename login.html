@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Code4Care</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="images/Sarah_Hacker_IMSE_Logomark_1_gan9aj.png" alt="Code4Care Logo">
+      <h1>code4care</h1>
+    </div>
+
+    <h2>Login</h2>
+
+    <label for="role">Select Role</label>
+    <select id="role">
+      <option value="patient">Patient</option>
+      <option value="doctor">Doctor</option>
+    </select>
+
+    <label for="loginType">Login With</label>
+    <select id="loginType" onchange="toggleLoginFields()">
+      <option value="aadhaar">Aadhaar</option>
+      <option value="phone">Phone Number</option>
+    </select>
+
+    <div id="aadhaarBox">
+      <label for="aadhaar">Aadhaar Number</label>
+      <input type="text" id="aadhaar" maxlength="12" placeholder="Enter Aadhaar Number">
+    </div>
+
+    <div id="phoneBox" class="hidden">
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" maxlength="10" placeholder="Enter Phone Number">
+    </div>
+
+    <button onclick="sendOTP()">Send OTP</button>
+
+    <div id="otpSection" class="hidden">
+      <label for="otp">Enter OTP</label>
+      <input type="text" id="otp" maxlength="6" placeholder="Enter OTP">
+      <button onclick="verifyOTP()">Verify OTP</button>
+    </div>
+
+    <div id="message" class="otp-box"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
